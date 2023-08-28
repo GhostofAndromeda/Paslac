@@ -1,0 +1,43 @@
+ash="\e[38;2;174;174;211m"
+string="あいうえおアイウエオ"
+loodo() {
+  orbit=0
+  while [ 1 = 1 ]; do
+    echo -en "\rDoing the thing... ${string:$orbit:1}"
+    ((orbit++))
+    if [ $orbit -eq 9 ]; then
+      orbit=0
+    fi
+    sleep 0.3
+  done
+}
+orbit=0
+IFS=$'\n' read -d '' -ra luna <<< "$(ls)"
+for moon in "${luna[@]}"; do
+  echo -e "$ash $orbit - $moon"
+  ((orbit++))
+done
+echo -en "choose which video to extract or subtitle to convert: "
+read arcturus
+f="${luna[$arcturus]}"
+orbit=0
+veo=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_type -of csv=p=0 "$f")
+if [ "video" == "$veo" ]; then
+  IFS=$'\n' read -d '' -ra planet <<< $(ffprobe -v error -select_streams s -show_entries stream_tags=title -of default=noprint_wrappers=1:nokey=1 "$f")
+  for rocks in "${planet[@]}"; do
+    echo -e "$orbit | $rocks"
+    ((orbit++))
+  done
+  echo -en "choose which subtitle to use: "
+  read peko
+else
+  peko=0
+fi
+orbit=0
+loodo &
+killer=$!
+ffmpeg -y -i "$f" -map 0:s:$peko -c:s text "[subsrt] $f.srt" > /dev/null 2>&1
+kill $killer
+echo ""
+
+
