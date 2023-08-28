@@ -1,0 +1,45 @@
+ash="\e[38;2;174;174;211m"
+string="あいうえおアイウエオ"
+loodo() {
+  orbit=0
+  while [ 1 = 1 ]; do
+    echo -en "\rDoing the thing... ${string:$orbit:1}"
+    ((orbit++))
+    if [ $orbit -eq 9 ]; then
+      orbit=0
+    fi
+    sleep 0.3
+  done
+}
+orbit=0
+IFS=$'\n' read -d '' -ra luna <<< "$(ls)"
+IFS=$'\n' read -d '' -ra oon < "except.txt"
+for moo in "${oon[@]}"; do
+  echo -e "${ash}This will except: $moo"
+done
+for moon in "${luna[@]}"; do
+  echo -e "$ash $orbit - $moon"
+  ((orbit++))
+done
+echo -en "choose which subtitle to clean: "
+read gas
+loodo &
+killer=$!
+orb=0
+IFS=$'\n' read -d '' -ra film < "${luna[$gas]}"
+while [ $orb -lt ${#oon[@]} ]; do
+  cc=-1
+  for stt in "${film[@]}"; do
+    if [[ $stt =~ "${oon[$orb]}" ]]; then
+      film[$cc]=""
+    fi
+    ((cc++))
+  done
+  ((orb++))
+done
+rm "[excepted] ${luna[$gas]}" > /dev/null 2>&1
+for shi in "${film[@]}"; do
+  echo "$shi" >> "[excepted] ${luna[$gas]}"
+done
+kill $killer
+echo ""
