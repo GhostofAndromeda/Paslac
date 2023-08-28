@@ -67,3 +67,24 @@ The default is: (youtube ambiguous noise subtitle kanjis or something)
 [音楽] and [拍手]
 Every subtitle entry you want to remove is put in that file seperated by newlines
 Your chosen srt subtitle will remove all subtitle entries with the text you put in the except.txt file and will give a subtitle file marked with [excepted] in the name.
+
+
+
+Cancelling a process midway may leave temporary file that you probably should remove or things might get a lot crowded.
+
+Error?
+Try renaming your files temporarily, without any special characters.
+Probably not supported. I only used srt, mp4, and mkv file formats for testing.
+
+Why only srt?
+Because I'm lazy, most of the work is done by chatGPT
+
+Why does your code look ugly?
+man, i tried..
+I also have to use the bash command since it's the only way I know and found to be easy.
+
+
+Actually if you know how to code in bash and understand my horrendous code, you can totally for free use it, copy, then optimize my code, make it better you know.
+I made this thing for myself so I'm not trying to be like professional and all. That's why I don't even try to make it look appealing to human eyes.
+But if someone can make something better than this, that I could totally use on my phone, I will ditch this project and use that instead.
+I made this so I don't have to use a computer everytime I want to condense audios.
