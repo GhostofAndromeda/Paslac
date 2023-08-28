@@ -49,7 +49,7 @@ Choose video or audio file
 then choose [time] marked file
 If you chose a video, then it will ask you to pick the language of audio to use (no unique audio stream will always be 1|eng)
 If you choose an audio, this will skip the converting to audio part.
-Wait, do something else instead. This thing takes like 5 minutes
+Wait, do something else instead. This thing should take like 5 minutes, or 49 minutes and 49.8 seconds if your condensing a 2 hours 59 minutes video on Resident Evil 2 remake gameplay by Luna princess vtuber.
 After waiting, you'll get your condensed audio marked with [condensed] in the name.
 enjoy your passive listening 
 
