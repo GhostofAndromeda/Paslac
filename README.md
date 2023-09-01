@@ -61,7 +61,8 @@ Subtitle should be in srt format because that's the only format I worked on. Alt
 
 To cancel a process, press ctrl then c  
 
-[time] file  
+
+{ [time] file }  
 ```bash
 ...$ bash timing
 ```
@@ -70,7 +71,8 @@ This will extract all subtitle timing and fix overlaps from an srt file.
 This will produce a file marked with [time] in the name.  
 This is required before condensing audio.  
 
-[condensed] file  
+
+{ [condensed] file }  
 ```bash
 ...$ bash condense
 ```
@@ -84,7 +86,8 @@ This thing should take like 5 minutes, or 49 minutes and 49.8 seconds if your co
 After waiting, you'll get your condensed audio marked with [condensed] in the name.  
 enjoy your passive listening.  
 
-[subsrt] file  
+
+{ [subsrt] file }  
 ```bash
 ...$ bash subtitle
 ```
@@ -92,7 +95,8 @@ Choosing video will extract subtitle file by title.
 Choosing subtitle will convert to srt  
 Either will give subtitle file marked with [subsrt] in the name.  
 
-[excepted] file  
+
+{ [excepted] file }  
 ```bash
 ...$ bash except
 ```
@@ -101,7 +105,8 @@ Every subtitle entry you want to remove is put in that file seperated by newline
 The default is: (youtube ambiguous noise subtitle kanjis or something: [音楽] and [拍手])  
 Your chosen srt subtitle will remove all subtitle entries with the text you put in the except.txt file and will give a subtitle file marked with [excepted] in the name.  
 
-[sublength] file  
+
+{ [sublength] file }  
 ```bash
 ...$ bash length
 ```
@@ -112,7 +117,8 @@ Ex: 200
 \/ \/ \/ \/  
 00:02:21,234 --> 00:02:26,676  
 
-[subtimed] file  
+
+{ [subtimed] file }  
 ```bash
 ...$ bash retime
 ```
