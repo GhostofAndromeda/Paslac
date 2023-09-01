@@ -1,5 +1,6 @@
 Make sure you have Termux app from  
 https://github.com/termux/termux-app#f-droid  
+or  
 https://f-droid.org/en/packages/com.termux/  
 not from google play store, it's deprecated there.  
 
