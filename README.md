@@ -23,13 +23,13 @@ Type: y
 to everything  
 
 You can use git to have my files  
-```bash
-~$ pkg install git
-```
 Change directory to the one you want to put my files  
 example to internal storage:  
 ```bash
 ~$ cd /sdcard
+```
+```bash
+~$ pkg install git
 ```
 then after that  
 ```bash
