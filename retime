@@ -1,0 +1,62 @@
+ash="\e[38;2;174;174;211m"
+string="あいうえおアイウエオ"
+loodo() {
+  orb=0
+  while [ 1 = 1 ]; do
+    echo -en "\rDoing the thing... ${string:$orb:1}"
+    ((orb++))
+    if [ $orb -eq 9 ]; then
+      orb=0
+    fi
+    sleep 0.3
+  done
+}
+IFS=$'\n' read -d '' -ra luna <<< "$(ls)"
+for moon in "${luna[@]}"; do
+  echo -e "$ash $orbit - $moon"
+  ((orbit++))
+done
+echo -en "${ash}choose subtitle to offset timing: "
+read nano
+echo -en "${ash}offset subtitle timing by milliseconds: "
+read machina
+k=${luna[$nano]}
+IFS=$'\n' read -d '' -ra moon < "$k"
+cosmic=0
+law="^[0-9]{2}:[0-9]{2}:[0-9]{2},[0-9]{3}"
+loodo &
+bgradia=()
+killer=$!
+while [ $cosmic -lt ${#moon[@]} ]; do
+  q=${moon[$cosmic]}
+  if [[ $q =~ $law ]]; then
+    yf=$(( 10#${q:20:2}*60 + 10#${q:23:2} ))
+    yf=$((yf*1000 + 10#${q:26:3}+machina))
+    kf=$((yf/60000))
+    yf=$((yf-kf*60000))
+    wf=$((yf/1000))
+    yf=$((yf-wf*1000))
+    moon[$cosmic]="${moon[$cosmic]:0:20}$(printf "%02d" "$kf"):$(printf "%02d" "$wf"),$(printf "%03d" "$yf")"
+    bgradia+=($cosmic)
+  fi
+  ((cosmic++))
+done
+cosmic=0
+for cbr in "${bgradia[@]}"; do
+  q=${moon[$cbr]}
+  yf=$(( 10#${q:3:2}*60 + 10#${q:6:2} ))
+  yf=$((yf*1000 + 10#${q:9:3}+machina))
+  kf=$((yf/60000))
+  yf=$((yf-kf*60000))
+  wf=$((yf/1000))
+  yf=$((yf-wf*1000))
+  moon[$cbr]="${moon[$cbr]:0:3}$(printf "%02d" "$kf"):$(printf "%02d" "$wf"),$(printf "%03d" "$yf")${moon[$cbr]:12:29}"
+done
+rm "[subtimed] $q" > /dev/null 2>&1
+for stars in "${moon[@]}"; do
+  echo $stars >> "[subtimed] $k"
+done
+ffmpeg -y -i "[subtimed] $k" "tempsrt.srt" > /dev/null 2>&1
+mv "tempsrt.srt" "[subtimed] $k" > /dev/null 2>&1
+kill $killer
+echo ""
