@@ -33,21 +33,21 @@ example to internal storage:
 ```
 then after that  
 ```bash
-/sdcard $ git clone https://github.com/GhostofAndromeda/Plac.git
+/sdcard $ git clone https://github.com/GhostofAndromeda/Paslac.git
 ```
-My files are now in /sdcard/Plac/{my files}  
+My files are now in /sdcard/Paslac/{my files}  
 
 Navigate to my files using cd command  
 example:  
 ```bash
-~$ cd /sdcard/Plac
+~$ cd /sdcard/Paslac
 ```
 This will change your directory to:  
 ```bash
-/sdcard/Plac $
+/sdcard/Paslac $
 ```
 
-If you get error, "fatal: could not create work dir 'Plac': Permission denied"  
+If you get error, "fatal: could not create work dir 'Paslac': Permission denied"  
 Try this if you haven't done it already:  
 ```bash
 ~$ termux-setup-storage
@@ -55,7 +55,7 @@ Try this if you haven't done it already:
 then allow storage access  
 or else navigate out of the directory then come back  
 
-Put your video or audio, and subtitle file in the Plac folder next to my files.  
+Put your video or audio, and subtitle file in the Paslac folder next to my files.  
 
 Subtitle should be in srt format because that's the only format I worked on. Although you can convert to srt, look for "[subsrt] file" in here.  
 The subtitle srt must have no styling like colors or position, text only.
@@ -66,7 +66,7 @@ To cancel a process, press ctrl then c
 
 { [time] file }  
 ```bash
-...$ bash timing
+.../Paslac $ bash timing
 ```
 Choose srt subtitle file  
 This will extract all subtitle timing and fix overlaps from an srt file.  
@@ -76,7 +76,7 @@ This is required before condensing audio.
 
 { [condensed] file }  
 ```bash
-...$ bash condense
+.../Paslac $ bash condense
 ```
 Choose video or audio file  
 Choose "[time]" marked file  
@@ -91,7 +91,7 @@ enjoy your passive listening.
 
 { [subsrt] file }  
 ```bash
-...$ bash subtitle
+.../Paslac $ bash subtitle
 ```
 Choosing video will extract subtitle file by title.  
 Choosing subtitle will convert to srt  
@@ -100,7 +100,7 @@ Either will give subtitle file marked with [subsrt] in the name.
 
 { [excepted] file }  
 ```bash
-...$ bash except
+.../Paslac $ bash except
 ```
 You can modify the "except.txt" file.  
 Every subtitle entry you want to remove is put in that file seperated by newlines.  
@@ -110,7 +110,7 @@ Your chosen srt subtitle will remove all subtitle entries with the text you put 
 
 { [sublength] file }  
 ```bash
-...$ bash length
+.../Paslac $ bash length
 ```
 Choose srt subtitle file  
 This will increase the time length subtitles are shown on the screen.  
@@ -122,7 +122,7 @@ Ex: 200
 
 { [subtimed] file }  
 ```bash
-...$ bash retime
+.../Paslac $ bash retime
 ```
 Choose srt subtitle file  
 This will offset the subtitle entries timing by milliseconds.  
