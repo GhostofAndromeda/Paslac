@@ -58,6 +58,8 @@ or else navigate out of the directory then come back
 Put your video or audio, and subtitle file in the Plac folder next to my files.  
 
 Subtitle should be in srt format because that's the only format I worked on. Although you can convert to srt, look for "[subsrt] file" in here.  
+The subtitle srt must have no styling like colors or position, text only.
+Convert your subtitle srt to no styles with "{ [subsrt] file }".
 
 To cancel a process, press ctrl then c  
 
